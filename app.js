@@ -17,7 +17,7 @@ app.set('view engine', 'hbs')
 
 const STARTING_SENTENCE = 'Once upon a time there was a house.'
 
-// define the sentence "model"
+// define the sentence "model" and the starting "instance"
 let sentences = [
   {
     id: 1,
