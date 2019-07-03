@@ -16,13 +16,14 @@ app.engine('hbs', hbs({
 app.set('view engine', 'hbs')
 
 const STARTING_SENTENCE = 'Once upon a time there was a house.'
+const NUMBER_OF_PATHS = 4
 
 // define the sentence "model" and the starting "instance"
 let sentences = [
   {
     id: 1,
     text: STARTING_SENTENCE,
-    paths: Array(4).fill(null)
+    paths: Array(NUMBER_OF_PATHS).fill(null)
   }
 ]
 
@@ -52,7 +53,7 @@ app.post('/sentences/:id', (req, res) => {
   const newSentence = {
     id: sentences.length + 1,
     text,
-    paths: Array(4).fill(null)
+    paths: Array(NUMBER_OF_PATHS).fill(null)
   }
   sentences.push(newSentence)
 
