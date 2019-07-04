@@ -1,0 +1,63 @@
+<table border="1">
+  <tr>
+    <td></td>
+    <td>
+      {{#if sentence.paths.[0]}}
+      <a href="/sentences/{{sentence.paths.[0].sentenceId}}">{{sentence.paths.[0].text}}</a>
+      {{else}}
+      <form method="post" action="/sentences/{{sentence.id}}">
+        <input type="hidden" name="pathIndex" value="0">
+        <textarea name="text" placeholder="enter continuation"></textarea>
+        <br>
+        <input type="submit" />
+      </form>
+      {{/if}}
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      {{#if sentence.paths.[1]}}
+      <a href="/sentences/{{sentence.paths.[1].sentenceId}}">{{sentence.paths.[1].text}}</a>
+      {{else}}
+      <form method="post" action="/sentences/{{sentence.id}}">
+        <input type="hidden" name="pathIndex" value="1">
+        <textarea name="text" placeholder="enter continuation"></textarea>
+        <br>
+        <input type="submit" />
+      </form>
+      {{/if}}
+    </td>
+    <td>
+      <h4>{{sentence.text}}</h4>
+    </td>
+    <td>
+      {{#if sentence.paths.[2]}}
+      <a href="/sentences/{{sentence.paths.[2].sentenceId}}">{{sentence.paths.[2].text}}</a>
+      {{else}}
+      <form method="post" action="/sentences/{{sentence.id}}">
+        <input type="hidden" name="pathIndex" value="2">
+        <textarea name="text" placeholder="enter continuation"></textarea>
+        <br>
+        <input type="submit" />
+      </form>
+      {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+      {{#if sentence.paths.[3]}}
+      <a href="/sentences/{{sentence.paths.[3].sentenceId}}">{{sentence.paths.[3].text}}</a>
+      {{else}}
+      <form method="post" action="/sentences/{{sentence.id}}">
+        <input type="hidden" name="pathIndex" value="3">
+        <textarea name="text" placeholder="enter continuation"></textarea>
+        <br>
+        <input type="submit" />
+      </form>
+      {{/if}}
+    </td>
+    <td></td>
+  </tr>
+</table>

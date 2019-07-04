@@ -34,14 +34,16 @@ app.get('/', (req, res) => {
 
 // sentence "show" endpoint
 app.get('/sentences/:id', (req, res) => {
+  if (req.params.id > sentences.length) return res.redirect('/sentences/1')
   const sentence = sentences[req.params.id - 1]
-  res.render('index', {
+  res.render('sentence', {
     sentence
   })
 })
 
 // sentence create endpoint, handling user input 
 app.post('/sentences/:id', (req, res) => {
+  console.log(req.body, req.params.id)
   const sentenceId = req.params.id
   const text = req.body.text
   const pathIndex = req.body.pathIndex
